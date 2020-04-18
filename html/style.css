@@ -1,5 +1,16 @@
 #organizations {
+  float: left;
+  position: relative;
   text-decoration: underline;
+  width:9em;
+  z-index: 99;
+}
+#nodeList {
+  color:green;
+  float:right;
+  position: relative;
+  text-decoration: underline;
+  width:15em;
 }
 .orgList {
   background-color: white;
@@ -15,29 +26,54 @@
   width:8em;
 }
 .organization {
-  float:left
+  float:left;
+  position: relative;
   width:9em;
 }
 .nodeFilter{
-  float:left;
+  float: left;
+  position: relative;
   text-align: center;
   width:8em;
 }
-.nodelist {
+.nodeListDisplay {
   float:right;
-  width:8em;
-  text-decoration: underline;
+  position:relative;
+  width:15em;
 }
 .orgnodes {
   float:right;
-  right-margin:9em;
-  width:9em;
+  position:relative;
+  right-margin:5em;
+  text-decoration: none;
+  width:10em;
 }
 .nodes {
-  display: inline-block;
   float:right;
-  right-margin:9em;
+  position:relative;
+  text-decoration: underline;
   width:8em;
+}
+.nodeEdit {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  float:left;
+  overflow: auto;
+  position:relative;
+  resize: both;
+}
+.editLabel {
+  float:left;
+  position:relative;
+  width:8em;
+}
+.editElement {
+  background-color: #F1F2F5;
+  float:left;
+  overflow: auto;
+  position:relative;
+  resize: both;
 }
 .ok {
   position:relative;

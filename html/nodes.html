@@ -14,17 +14,19 @@
     <h2 align="center">Manage Chef Nodes</h2>
     <h3> Selection Filters</h3>
     <div class=user>User</div>
-    <div class=organization id=organizations onclick="organizationListFunction()">Organizations</div>
+    <div id=organizations onclick="organizationListFunction()">  Organizations</div>
     <div class=nodeFilter>Nodes Filter</div>
-    <div class=ok><button onclick="filterNodesFunction()">filter off</button></div>
+    <div class=ok id=filterToggle><button onclick="filterNodesFunction()">filter off</button></div>
     <br>
-    <div class=user><input type="text" id="inUser"></div>
+    <div class="user"><input type="text" id="inUser"></div>
     <div class=organization><input type="text" id="inOrganization"></div>
     <div class=organization id="organizationList"></div>
     <div class=nodeFilter><input type="text" id="inNode"></div>
     <div class=clear></div>
     <br>
-    <div class=nodelist id=nodeList onclick="nodesListFunction()">Node List</div>
+    <div id=nodeList onclick="nodesListFunction()">Node List</div>
+    <br>
+    <div class=nodeListDisplay id=nodeListDisplay></div>
     <div class=user  id="user"></div>
     <div class=organization id="organization"></div>
     <div class=node id="node"></div>
