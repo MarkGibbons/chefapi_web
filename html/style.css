@@ -1,0 +1,54 @@
+#organizations {
+  text-decoration: underline;
+}
+.orgList {
+  background-color: white;
+  position: relative;
+  float: left;
+  width:9em;
+  border-radius: 2px;
+  border: 2px solid white;
+}
+.user {
+  float:left;
+  text-align: center;
+  width:8em;
+}
+.organization {
+  float:left
+  width:9em;
+}
+.nodeFilter{
+  float:left;
+  text-align: center;
+  width:8em;
+}
+.nodelist {
+  float:right;
+  width:8em;
+  text-decoration: underline;
+}
+.orgnodes {
+  float:right;
+  right-margin:9em;
+  width:9em;
+}
+.nodes {
+  display: inline-block;
+  float:right;
+  right-margin:9em;
+  width:8em;
+}
+.ok {
+  position:relative;
+  left:30PX;
+}
+// buttons https://www.w3schools.com/css/css3_buttons.asp
+// back ground colors
+// Rounded corners
+// Clickable indicate by opacity
+// Centering and location
+//  probably table attributes available
+//  size is adjustable
+// white type inside darker boxes
+//  css tutorial

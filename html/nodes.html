@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="organizationList.js" type="text/javascript"></script>
+    <script src="selectOrg.js" type="text/javascript"></script>
+    <script src="filterNodes.js" type="text/javascript"></script>
+    <script src="nodesList.js" type="text/javascript"></script>
+    <script src="nodeEdit.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <h2 align="center">Manage Chef Nodes</h2>
+    <h3> Selection Filters</h3>
+    <div class=user>User</div>
+    <div class=organization id=organizations onclick="organizationListFunction()">Organizations</div>
+    <div class=nodeFilter>Nodes Filter</div>
+    <div class=ok><button onclick="filterNodesFunction()">filter off</button></div>
+    <br>
+    <div class=user><input type="text" id="inUser"></div>
+    <div class=organization><input type="text" id="inOrganization"></div>
+    <div class=organization id="organizationList"></div>
+    <div class=nodeFilter><input type="text" id="inNode"></div>
+    <div class=clear></div>
+    <br>
+    <div class=nodelist id=nodeList onclick="nodesListFunction()">Node List</div>
+    <div class=user  id="user"></div>
+    <div class=organization id="organization"></div>
+    <div class=node id="node"></div>
+    <div id=nodeDetails></div>
+    <br>
+  </body>
+</html>
