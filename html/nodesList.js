@@ -1,7 +1,20 @@
 function nodesListFunction() {
   // Create a request to use to call the nodes api
   var request = new XMLHttpRequest()
-  request.open('GET', 'http://localhost:9002/orgnodes', true)
+  var filters = {}
+  if (document.getElementById("filterToggle").textContent == "on") {
+    console.log("Using the filter")
+    filters.user = document.getElementById("user").textContent;
+    filters.organization = document.getElementById("organization").textContent;
+    filters.node = document.getElementById("node").textContent;
+  } else {
+    filters.user = document.getElementById("user").textContent;
+    filters.organization = document.getElementById("organization").textContent;
+    filters.node = document.getElementById("node").textContent;
+  }
+
+  request.open("GET", "http://localhost:9002/orgnodes"+"?user="+filters.user+"&organization="+filters.organization+"&node="+filters.node, true)
+  request.setRequestHeader('Content-type','application/json; charset=utf-8');
   request.onload = function () {
     // Access JSON here
     var orgnodes = JSON.parse(this.response)
