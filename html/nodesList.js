@@ -4,13 +4,13 @@ function nodesListFunction() {
   var filters = {}
   if (document.getElementById("filterToggle").textContent == "on") {
     console.log("Using the filter")
-    filters.user = document.getElementById("user").textContent;
-    filters.organization = document.getElementById("organization").textContent;
-    filters.node = document.getElementById("node").textContent;
+    filters.user = document.getElementById("user").value;
+    filters.organization = document.getElementById("organization").value;
+    filters.node = document.getElementById("node").value;
   } else {
-    filters.user = document.getElementById("user").textContent;
-    filters.organization = document.getElementById("organization").textContent;
-    filters.node = document.getElementById("node").textContent;
+    filters.user = "";
+    filters.organization = "";
+    filters.node = "";
   }
 
   request.open("GET", "http://localhost:9002/orgnodes"+"?user="+filters.user+"&organization="+filters.organization+"&node="+filters.node, true)
