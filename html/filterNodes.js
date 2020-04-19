@@ -8,4 +8,6 @@ function filterNodesFunction() {
   };
 
   document.getElementById("filterToggle").innerHTML = flip;
+
+  nodesListFunction()
 }

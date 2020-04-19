@@ -8,11 +8,12 @@
     <script src="filterNodes.js" type="text/javascript"></script>
     <script src="nodesList.js" type="text/javascript"></script>
     <script src="nodeEdit.js" type="text/javascript"></script>
+    <script src="nodeUpdate.js" type="text/javascript"></script>
   </head>
 
   <body>
     <h2 align="center">Manage Chef Nodes</h2>
-    <h3> Selection Filters</h3>
+    <h3 style="padding-left:7em;"> Selection Filters</h3>
     <div class=user>User</div>
     <div id=organizations onclick="organizationListFunction()">  Organizations</div>
     <div class=nodeFilter>Nodes Filter</div>
@@ -28,6 +29,7 @@
     <br>
     <div class=nodeListDisplay id=nodeListDisplay></div>
     <div id=nodeDetails></div>
+    <div class=nodisplay id=updateNode><button onclick="nodeUpdateFunction()">update node</button></div>
     <br>
   </body>
 </html>
