@@ -1,0 +1,16 @@
+.user {
+  float:left;
+  text-align: center;
+  width:8em;
+}
+.password {
+  float:left;
+  position: relative;
+  width:9em;
+}
+.ok {
+  position:relative;
+}
+.nodisplay {
+  display:none;
+}
