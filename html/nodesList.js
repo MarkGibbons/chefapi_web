@@ -13,13 +13,24 @@ function nodesListFunction() {
     filters.node = "";
   }
 
+  // leave unless the jwt is set
+  jwttoken = sessionStorage.getItem("jwttoken");
+  if (jwttoken == null || jwttoken == 'undefined') {
+    document.getElementById('nodeListDisplay').innerHTML = "<div>You must <a href=login.html>Login<a> first</div>";
+    return;
+  }
+  // Get the list of organizations and nodes
   request.open("GET", "http://localhost:9002/orgnodes"+"?user="+filters.user+"&organization="+filters.organization+"&node="+filters.node, true)
   request.setRequestHeader('Content-type','application/json; charset=utf-8');
+  request.setRequestHeader("Authorization", "Bearer "+ jwttoken)
+  console.log("JWT"+jwttoken)
   request.onload = function () {
-    // Access JSON here
+    if (this.status != 200) {
+      alert(`Error ${this.status} calling orgnodes`);
+      return;
+    }
     var orgnodes = JSON.parse(this.response)
     orgnodes.sort(orgOrder)
-    console.log(orgnodes)
 
     var html = "<table class=orgnodes border='0|0'>";
     for (var i = 0; i < orgnodes.length; i++) {

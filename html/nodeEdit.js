@@ -1,9 +1,14 @@
 function nodeEdit(org, node) {
+  // A small window exists here where we could not be authorized to update. Get a fresh JWT login update.
   // Create a request to use to call the nodes api and get detailed information
   var request = new XMLHttpRequest()
   request.open('GET', 'http://localhost:9002/orgnodes/'+org+'/nodes/'+node, true)
+  request.setRequestHeader("Authorization", "Bearer "+ sessionStorage.getItem("jwttoken"))
   request.onload = function () {
-    // Access JSON here
+    if (this.status != 200) {
+       alert(`Error ${this.status}: $this.statusText}`);
+       return;
+    }
     var nodeinfo = JSON.parse(this.response)
     console.log(nodeinfo)
 

@@ -1,4 +1,5 @@
 function nodeUpdateFunction() {
+  // A small window exists here where we could not be authorized to update. Get a fresh JWT login update.
   // Update a node with the edited information
   org = document.getElementById('editOrg').textContent;
   node = document.getElementById('editName').textContent;
@@ -6,7 +7,12 @@ function nodeUpdateFunction() {
   var request = new XMLHttpRequest();
   request.open('PUT', 'http://localhost:9002/orgnodes/'+org+'/nodes/'+node, true);
   request.setRequestHeader("Content-type", "application/json, charset=utf-8");
+  request.setRequestHeader("Authorization", "Bearer "+ sessionStorage.getItem("jwttoken"))
   request.onload = function () {
+    if (this.status != 200) {
+      alert(`Error ${this.status}: $this.statusText}`);
+      return;
+    }
     document.getElementById('updateNode').style.display = "none";
     document.getElementById('editBox').style.display = "none";
   }
