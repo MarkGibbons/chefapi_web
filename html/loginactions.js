@@ -6,6 +6,8 @@ function signinFunction() {
   request.setRequestHeader("Content-type", "application/json, charset=utf-8");
   request.onload = function() {
     sessionStorage.setItem("jwttoken", this.response);
+    sessionStorage.setItem("jwtuser", document.getElementById('user').value);
+    welcomeFunction();
   }
   var signin = {}
   signin.username = document.getElementById('user').value;
@@ -22,7 +24,6 @@ function refreshFunction() {
   var request = new XMLHttpRequest();
   request.open('POST', 'https://localhost:8113/refresh', false);
   request.send();
-	// TODO: the result includes a cookie. What do we have to do with it.
 }
 
 function welcomeFunction() {

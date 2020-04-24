@@ -20,7 +20,7 @@ function nodesListFunction() {
     return;
   }
   // Get the list of organizations and nodes
-  request.open("GET", "http://localhost:9002/orgnodes"+"?user="+filters.user+"&organization="+filters.organization+"&node="+filters.node, true)
+  request.open("GET", "https://localhost:8143/orgnodes"+"?user="+filters.user+"&organization="+filters.organization+"&node="+filters.node, true)
   request.setRequestHeader('Content-type','application/json; charset=utf-8');
   request.setRequestHeader("Authorization", "Bearer "+ jwttoken)
   console.log("JWT"+jwttoken)
@@ -35,7 +35,7 @@ function nodesListFunction() {
     var html = "<table class=orgnodes border='0|0'>";
     for (var i = 0; i < orgnodes.length; i++) {
       html+="<tr>";
-      html+="<td class='orgnodes' id=orgnodes"+orgnodes[i].organization+" onclick=expandOrg('"+orgnodes[i].organization+"')><u>"+orgnodes[i].organization+"</u></td>";
+      html+="<td class='orgnodes' id=orgnodes"+orgnodes[i].organization+" onclick=expandOrg('"+orgnodes[i].organization+"')>"+orgnodes[i].organization+"</td>";
       var nodes = orgnodes[i].nodes	    
       nodes.sort(nodeOrder)
       html+="<table class=nodes border='0|0'>";

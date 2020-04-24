@@ -5,7 +5,7 @@ function nodeUpdateFunction() {
   node = document.getElementById('editName').textContent;
 
   var request = new XMLHttpRequest();
-  request.open('PUT', 'http://localhost:9002/orgnodes/'+org+'/nodes/'+node, true);
+  request.open('PUT', 'https://localhost:8143/orgnodes/'+org+'/nodes/'+node, true);
   request.setRequestHeader("Content-type", "application/json, charset=utf-8");
   request.setRequestHeader("Authorization", "Bearer "+ sessionStorage.getItem("jwttoken"))
   request.onload = function () {
@@ -23,11 +23,10 @@ function nodeUpdateFunction() {
   update.policy_name = document.getElementById('editPolicyName').textContent;
   update.policy_group = document.getElementById('editPolicyGroup').textContent;
   // update.run_list = document.getElementById('editRunList').textContent;
-  // RunList:[]
-  // AutomaticAttributes:map[]
-  // NormalAttributes:map[]
-  // DefaultAttributes:map[]
-  // OverrideAttributes:map[]
+  // update.automatic_attributes = document.getElementById('editAutomaticAttributes').textContent;
+  // update.normal_attributes = document.getElementById('editNormalAttributes').textContent;
+  // update.default_attributes = document.getElementById('editDefaultAttributes').textContent;
+  // update.override_attributes = document.getElementById('editOverrideAttributes').textContent;
   var jsonBody = JSON.stringify(update);
   console.log("UPDATE JSON"+jsonBody);
   request.send(jsonBody);

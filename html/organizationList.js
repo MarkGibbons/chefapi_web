@@ -1,7 +1,7 @@
 function organizationListFunction() {
   // Create a request to use to call the organizations api
   var request = new XMLHttpRequest()
-  request.open('GET', 'http://localhost:9002/orgs', true)
+  request.open('GET', 'https://localhost:8143/orgs', true)
   request.onload = function () {
     // Access JSON here
     console.log(this.response)

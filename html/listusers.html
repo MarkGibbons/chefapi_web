@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="organizationList.js" type="text/javascript"></script>
+    <script src="selectOrg.js" type="text/javascript"></script>
+    <script src="filterUsers.js" type="text/javascript"></script>
+    <script src="listusers.js" type="text/javascript"></script>
+    <script src="listorgadmins.js" type="text/javascript"></script>
+    <script src="listorgusers.js" type="text/javascript"></script>
+    <script src="jwt.js" type="text/javascript"></script>
+    <script src="createUser.js" type="text/javascript"></script>
+    <script src="joinOrganization.js" type="text/javascript"></script>
+  </head>
+
+  <body onLoad="setjwtuser()">
+    <h2 align="center">Manage Chef Users</h2>
+    <h3 style="padding-left:7em;"> Selection Filters</h3>
+    <div class=user>User</div>
+    <div id=organizations onclick="organizationListFunction()">  Organizations</div>
+    <div class=ok id=filterToggle><button onclick="filterUsersFunction()">filter off</button></div>
+    <br>
+    <div class="user"><input type="text" id="user"></div>
+    <div class=organization><input type="text" id="organization"></div>
+    <div class=organization id="organizationList"></div>
+    <div class=clear></div>
+
+    <div class=userselect id=userList onclick="usersListFunction()">User List</div><br><div>
+    <div class=userselect id=adminUserList onclick="orgadminsListFunction()">Org Admin User List</div><br><div>
+    <div class=userselect id=orgUserList  onclick="orgusersListFunction()">Org User List</div><br><div>
+    <div class=userListDisplay id=userListDisplay></div>
+
+    <br class=clear>
+    <div class=editLabel onclick="createUser()"><u>Create User</u></div><br><br>
+    <div class=editLabel onclick="joinOrganization()"><u>Add User to Organization</u></div><br>
+    <div class=editElement contentEditable="true" id=editOrganization></div><br><br>
+
+    <div class=nodeEdit id=editBox>
+    <div class=editLabel>User Name</div><div class=editElement id=editUsername></div><br>
+    <div class=editLabel>Email</div><div class=editElement contentEditable="true" id=editEmail></div><br>
+    <div class=editLabel>First Name</div><div class=editElement contentEditable="true" id=editFirstname></div><br>
+    <div class=editLabel>Last Name</div><div class=editElement contentEditable="true" id=editLastname></div><br>
+    <div class=editLabel>Display Name</div><div class=editElement contentEditable="true" id=editDisplayname></div><br>
+    </div>
+  </body>
+</html>

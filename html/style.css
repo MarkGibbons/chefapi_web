@@ -11,6 +11,12 @@
   text-decoration: underline;
   width:15em;
 }
+.userselect {
+  float:right;
+  position: relative;
+  text-decoration: underline;
+  width:15em;
+}
 .orgList {
   background-color: white;
   position: relative;
@@ -40,6 +46,11 @@
   position:relative;
   width:15em;
 }
+.userListDisplay {
+  float:right;
+  position:relative;
+  width:15em;
+}
 .orgnodes {
   float:right;
   position:relative;
@@ -50,10 +61,32 @@
 .nodes {
   float:right;
   position:relative;
-  text-decoration: underline;
+  text-decoration: none;
+  width:8em;
+}
+.orgusers {
+  float:right;
+  position:relative;
+  right-margin:5em;
+  text-decoration: none;
+  width:10em;
+}
+.users {
+  float:right;
+  position:relative;
+  text-decoration: none;
   width:8em;
 }
 .nodeEdit {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  float:left;
+  overflow: auto;
+  position:relative;
+  resize: both;
+}
+.userEdit {
   border-style: solid;
   border-width: 2px;
   border-radius: 5px;
@@ -73,6 +106,8 @@
   overflow: auto;
   position:relative;
   resize: both;
+  width:10em;
+  height: 1em;
 }
 .ok {
   position:relative;
@@ -80,6 +115,9 @@
 }
 .nodisplay {
   display:none;
+}
+.clear {
+  clear:both
 }
 // buttons https://www.w3schools.com/css/css3_buttons.asp
 // back ground colors

@@ -2,7 +2,7 @@ function nodeEdit(org, node) {
   // A small window exists here where we could not be authorized to update. Get a fresh JWT login update.
   // Create a request to use to call the nodes api and get detailed information
   var request = new XMLHttpRequest()
-  request.open('GET', 'http://localhost:9002/orgnodes/'+org+'/nodes/'+node, true)
+  request.open('GET', 'https://localhost:8143/orgnodes/'+org+'/nodes/'+node, true)
   request.setRequestHeader("Authorization", "Bearer "+ sessionStorage.getItem("jwttoken"))
   request.onload = function () {
     if (this.status != 200) {
@@ -10,7 +10,9 @@ function nodeEdit(org, node) {
        return;
     }
     var nodeinfo = JSON.parse(this.response)
-    console.log(nodeinfo)
+    console.log("Before"+JSON.stringify(nodeinfo))
+    nodeinfo = nodeinfoDefaults(nodeinfo)
+    console.log("After"+JSON.stringify(nodeinfo))
 
     var html = "<div class=nodeEdit id=editBox>";
     html+= "<div class=editLabel>organization:</div>"+"<div id=editOrg>"+org+"</div>"+"<div></div>";
@@ -19,15 +21,21 @@ function nodeEdit(org, node) {
     html+= "<div class=editLabel>policy name:</div>"+"<div  id=editPolicyName contenteditable=true class=editElement>"+nodeinfo.policy_name+"</div>"+"<br>";
     html+= "<div class=editLabel>policy group:</div>"+"<div  id=editPolicyGroup contenteditable=true class=editElement>"+nodeinfo.policy_group+"</div>"+"<br>";
     // RunList:[]
-    html+= "<div class=editLabel>run_list:</div>"+"<div id=editRunList contenteditable=true class=editElement>"+nodeinfo.run_list+"</div>"+"<br>";
+    rl = JSON.stringify(nodeinfo.run_list)
+    html+= "<div class=editLabel>run_list:</div>"+"<div id=editRunList contenteditable=true class=editElement>"+rl+"</div>"+"<br>";
+    html+= "<div class=editLabel>Attributes</div><br>"
     // AutomaticAttributes:map[] 
-    html+= "<div class=editLabel>automatic attributes:</div>"+"<div id=editAutomaticAttributes contenteditable=true class=editElement>"+nodeinfo.automatic_attributes+"</div>"+"<br>";
+    aa = JSON.stringify(nodeinfo.automatic_attributes)
+    html+= "<div class=editLabel>automatic:</div>"+"<div id=editAutomaticAttributes contenteditable=true class=editElement>"+aa+"</div>"+"<br>";
     // NormalAttributes:map[] 
-    html+= "<div class=editLabel>normal attributes:</div>"+"<div id=editNormalAttributes contenteditable=true class=editElement>"+nodeinfo.normal_attributes+"</div>"+"<br>";
+    na = JSON.stringify(nodeinfo.normal_attributes)
+    html+= "<div class=editLabel>normal:</div>"+"<div id=editNormalAttributes contenteditable=true class=editElement>"+na+"</div>"+"<br>";
     // DefaultAttributes:map[]
-    html+= "<div class=editLabel>default attributes:</div>"+"<div id=editDefaultAttributes contenteditable=true class=editElement>"+nodeinfo.default_attributes+"</div>"+"<br>";
+    da = JSON.stringify(nodeinfo.default_attributes)
+    html+= "<div class=editLabel>default:</div>"+"<div id=editDefaultAttributes contenteditable=true class=editElement>"+da+"</div>"+"<br>";
     // OverrideAttributes:map[]
-    html+= "<div class=editLabel>override attributes:</div>"+"<div id=editOverrideAttributes contenteditable=true class=editElement>"+nodeinfo.override_attributes+"</div>"+"<br>";
+    oa = JSON.stringify(nodeinfo.override_attributes)
+    html+= "<div class=editLabel>override:</div>"+"<div id=editOverrideAttributes contenteditable=true class=editElement>"+oa+"</div>"+"<br>";
     html+="</div>";
     document.getElementById('nodeDetails').innerHTML = html;
     document.getElementById('updateNode').style.display = "inline";
@@ -35,3 +43,14 @@ function nodeEdit(org, node) {
   }
   request.send()
 }
+
+ function nodeinfoDefaults(nodeinfo) {
+	 if (typeof nodeinfo.policy_name == "undefined") nodeinfo.policy_name = ""
+	 if (typeof nodeinfo.policy_group == "undefined") nodeinfo.policy_group = ""
+	 if (typeof nodeinfo.run_list == "undefined") nodeinfo.run_list = []
+	 if (typeof nodeinfo.automatic_attributes == "undefined") { nodeinfo.automatic_attributes = {} }
+	 if (typeof nodeinfo.normal_attributes == "undefined") { nodeinfo.normal_attributes = {} }
+	 if (typeof nodeinfo.default_attributes == "undefined") { nodeinfo.default_attributes = {} }
+	 if (typeof nodeinfo.override_attributes == "undefined") { nodeinfo.override_attributes = {} }
+	 return nodeinfo
+ }
