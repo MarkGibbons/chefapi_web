@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+listusers.html<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -26,22 +26,29 @@
     <div class=organization id="organizationList"></div>
     <div class=clear></div>
 
-    <div class=userselect id=userList onclick="usersListFunction()">User List</div><br><div>
-    <div class=userselect id=adminUserList onclick="orgadminsListFunction()">Org Admin User List</div><br><div>
-    <div class=userselect id=orgUserList  onclick="orgusersListFunction()">Org User List</div><br><div>
-    <div class=userListDisplay id=userListDisplay></div>
-
-    <br class=clear>
-    <div class=editLabel onclick="createUser()"><u>Create User</u></div><br><br>
-    <div class=editLabel onclick="joinOrganization()"><u>Add User to Organization</u></div><br>
-    <div class=editElement contentEditable="true" id=editOrganization></div><br><br>
-
-    <div class=nodeEdit id=editBox>
-    <div class=editLabel>User Name</div><div class=editElement id=editUsername></div><br>
-    <div class=editLabel>Email</div><div class=editElement contentEditable="true" id=editEmail></div><br>
-    <div class=editLabel>First Name</div><div class=editElement contentEditable="true" id=editFirstname></div><br>
-    <div class=editLabel>Last Name</div><div class=editElement contentEditable="true" id=editLastname></div><br>
-    <div class=editLabel>Display Name</div><div class=editElement contentEditable="true" id=editDisplayname></div><br>
+    <div class=rightcolumns>
+      <h3 align="center"> List Users </h3>
+      <div class=userselect id=userList onclick="usersListFunction()">User List</div><br><div>
+      <div class=userselect id=adminUserList onclick="orgadminsListFunction()">Org Admin User List</div><br><div>
+      <div class=userselect id=orgUserList  onclick="orgusersListFunction()">Org User List</div><br><div>
+      <div class=userListDisplay id=userListDisplay></div>
     </div>
+
+    <div class=leftcolumns>
+      <h3 align="center"> Manage a User </h3>
+      <div class=editLabel>User Name</div><div class=editElement id=editUsername></div><br><br>
+      <div class=editLabel onclick="createUser()"><u>Create a Chef User</u></div><br><br>
+      <div class=nodeEdit id=editBox>
+        <div class=editLabel>Email</div><div class=editElement contentEditable="true" id=editEmail></div><br>
+        <div class=editLabel>First Name</div><div class=editElement contentEditable="true" id=editFirstname></div><br>
+        <div class=editLabel>Last Name</div><div class=editElement contentEditable="true" id=editLastname></div><br>
+        <div class=editLabel>Display Name</div><div class=editElement contentEditable="true" id=editDisplayname></div><br>
+      </div>
+      <div class=editLabel onclick="deleteUser()">Delete a Chef User</div><br><br>
+      <div class=editLabel onclick="deleteUser()">Edit a Chef User</div><br><br>
+      <div class=editLabel onclick="joinOrganization()"><u>Add a User to an Organization</u></div><br>
+      <div class=editElement contentEditable="true" id=editOrganization></div><br><br>
+    </div>
+
   </body>
 </html>

@@ -116,6 +116,12 @@
 .nodisplay {
   display:none;
 }
+.leftcolumns {
+  float: left;
+}
+.rightcolumns {
+  float: right;
+}
 .clear {
   clear:both
 }
