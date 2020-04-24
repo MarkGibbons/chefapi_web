@@ -1,4 +1,4 @@
-listusers.html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -28,9 +28,9 @@ listusers.html<!DOCTYPE html>
 
     <div class=rightcolumns>
       <h3 align="center"> List Users </h3>
-      <div class=userselect id=userList onclick="usersListFunction()">User List</div><br><div>
-      <div class=userselect id=adminUserList onclick="orgadminsListFunction()">Org Admin User List</div><br><div>
-      <div class=userselect id=orgUserList  onclick="orgusersListFunction()">Org User List</div><br><div>
+      <div class=userselect id=userList onclick="usersListFunction()">User List</div><br>
+      <div class=userselect id=adminUserList onclick="orgadminsListFunction()">Org Admin User List</div><br>
+      <div class=userselect id=orgUserList  onclick="orgusersListFunction()">Org User List</div><br>
       <div class=userListDisplay id=userListDisplay></div>
     </div>
 
@@ -43,12 +43,16 @@ listusers.html<!DOCTYPE html>
         <div class=editLabel>First Name</div><div class=editElement contentEditable="true" id=editFirstname></div><br>
         <div class=editLabel>Last Name</div><div class=editElement contentEditable="true" id=editLastname></div><br>
         <div class=editLabel>Display Name</div><div class=editElement contentEditable="true" id=editDisplayname></div><br>
-      </div>
-      <div class=editLabel onclick="deleteUser()">Delete a Chef User</div><br><br>
-      <div class=editLabel onclick="deleteUser()">Edit a Chef User</div><br><br>
-      <div class=editLabel onclick="joinOrganization()"><u>Add a User to an Organization</u></div><br>
+      </div><br><br>
+      <br><br>
+      <div class=editLabel onclick="deleteUser()"><u>Delete a Chef User</u></div><br><br>
+      <div class=editLabel onclick="editUser()"><u>Edit a Chef User</u></div><br><br>
+      <div class=editLabel onclick="refreshUserKey()"><u>Refresh a User Private Key</div><br><br>
+      <div class=editLabel onclick="joinOrganization()"><u>Add a User to an Organization</u></div>
       <div class=editElement contentEditable="true" id=editOrganization></div><br><br>
     </div>
+    <div class=clear><div><br>
+    <div id=privateKey>RSA Private Key</div>
 
   </body>
 </html>

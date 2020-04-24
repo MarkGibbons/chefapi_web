@@ -9,7 +9,10 @@ function createUser() {
       alert(`Error ${this.status}: $this.statusText}`);
       return;
     }
-    console.log("RSP "+this.response)
+    var userResp = JSON.parse(this.response)
+    console.log("RSP "+ userResp["chef_key"])
+    console.log("RSP "+ userResp["chef_key"]["private_key"])
+    document.getElementById("privateKey").innerHTML = userResp["chef_key"]["private_key"]
     // Get the body and display to private key
   }
   
