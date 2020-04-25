@@ -10,9 +10,7 @@ function createUser() {
       return;
     }
     var userResp = JSON.parse(this.response)
-    console.log("RSP "+ userResp["chef_key"])
-    console.log("RSP "+ userResp["chef_key"]["private_key"])
-    document.getElementById("privateKey").innerHTML = userResp["chef_key"]["private_key"]
+    document.getElementById("privateKey").innerHTML = "<div> Save this private key<br>" +userResp["chef_key"]["private_key"] + "</div>"
     // Get the body and display to private key
   }
   
@@ -24,7 +22,31 @@ function createUser() {
   newuser.last_name = document.getElementById('editLastname').textContent;
   newuser.password = "dummyi1234$complex"
   newuser.create_key = true
+
+  // Alert and return if disp, email not set
+  if ( newuser["display_name"].length == 0 || newuser["email"].length == 0 ) {
+      alert(`Error: The display_name and email values must be set`);
+      return;
+  }
+
+  // Verify the email address
+  if ( ValidateEmail(newuser["email"]) ) {
+      alert(`Error: The email address must be valid`);
+      return;
+  }
+
   var jsonBody = JSON.stringify(newuser);
   console.log("CREATE JSON"+jsonBody);
   request.send(jsonBody);
 }
+
+function ValidateEmail(mail)
+{
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+  {
+    return (true)
+  }
+    alert("You have entered an invalid email address!")
+    return (false)
+}
+

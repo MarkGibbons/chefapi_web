@@ -11,6 +11,7 @@
     <script src="listorgusers.js" type="text/javascript"></script>
     <script src="jwt.js" type="text/javascript"></script>
     <script src="createUser.js" type="text/javascript"></script>
+    <script src="deleteUser.js" type="text/javascript"></script>
     <script src="joinOrganization.js" type="text/javascript"></script>
   </head>
 
@@ -36,13 +37,13 @@
 
     <div class=leftcolumns>
       <h3 align="center"> Manage a User </h3>
-      <div class=editLabel>User Name</div><div class=editElement id=editUsername></div><br><br>
+      <div class=editLabel>User Name</div><div class=leftcolumns id=editUsername></div><br><br>
       <div class=editLabel onclick="createUser()"><u>Create a Chef User</u></div><br><br>
       <div class=nodeEdit id=editBox>
-        <div class=editLabel>Email</div><div class=editElement contentEditable="true" id=editEmail></div><br>
-        <div class=editLabel>First Name</div><div class=editElement contentEditable="true" id=editFirstname></div><br>
-        <div class=editLabel>Last Name</div><div class=editElement contentEditable="true" id=editLastname></div><br>
-        <div class=editLabel>Display Name</div><div class=editElement contentEditable="true" id=editDisplayname></div><br>
+        <div class=editLabel>Email</div><div class=editElement  autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contentEditable="true" id=editEmail></div><br>
+        <div class=editLabel>First Name</div><div class=editElement autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contentEditable="true" id=editFirstname></div><br>
+        <div class=editLabel>Last Name</div><div class=editElement autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contentEditable="true" id=editLastname></div><br>
+        <div class=editLabel>Display Name</div><div class=editElement autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contentEditable="true" id=editDisplayname></div><br>
       </div><br><br>
       <br><br>
       <div class=editLabel onclick="deleteUser()"><u>Delete a Chef User</u></div><br><br>
