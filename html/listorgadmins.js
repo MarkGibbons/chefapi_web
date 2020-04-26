@@ -40,6 +40,7 @@ function orgadminsListFunction() {
       html+="<td class='orgusers' id=orgusers"+orgusers[i].organization+" onclick=expandOrg('"+orgusers[i].organization+"')>"+orgusers[i].organization+"</td>";
       html+="<table class=users border='0|0'>";
       users = orgusers[i].users
+      users.sort(userOrder)
       for (var j = 0; j < users.length; j++) {
         html+="<tr>";		 
         html+="<td class='users' id=user"+users[j]+" onclick=userEdit('"+orgusers[i].organization+"','"+users[j]+"')>"+users[j]+"</td>";
@@ -52,16 +53,4 @@ function orgadminsListFunction() {
     document.getElementById("userListDisplay").style.display = "inline-table";
   }
   request.send()
-}
-
-function orgOrder(a, b) {
-  if (a.organization < b.organization) { return -1;}
-  if (a.organization > b.organization) { return 1;}
-  if (a.organization == b.organization) { return 0;}
-}
-
-function userOrder(a, b) {
-  if (a < b) { return -1;}
-  if (a > b) { return 1;}
-  if (a == b) { return 0;}
 }

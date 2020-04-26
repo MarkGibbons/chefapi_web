@@ -30,6 +30,7 @@ function usersListFunction() {
     console.log("List"+this.response)
     var users = JSON.parse(this.response)
     console.log("List parsed"+users)
+    users.sort(userOrder)
 
     var html = "<table class=users border='0|0'>";
     html+="<tr>"
@@ -45,16 +46,4 @@ function usersListFunction() {
     document.getElementById("userListDisplay").style.display = "inline-table";
   }
   request.send()
-}
-
-function orgOrder(a, b) {
-  if (a.organization < b.organization) { return -1;}
-  if (a.organization > b.organization) { return 1;}
-  if (a.organization == b.organization) { return 0;}
-}
-
-function userOrder(a, b) {
-  if (a < b) { return -1;}
-  if (a > b) { return 1;}
-  if (a == b) { return 0;}
 }
