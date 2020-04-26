@@ -30,7 +30,7 @@ function createUser() {
   }
 
   // Verify the email address
-  if ( ValidateEmail(newuser["email"]) ) {
+  if ( ValidateEmail(newuser["email"]) != true ) {
       alert(`Error: The email address must be valid`);
       return;
   }
@@ -42,11 +42,11 @@ function createUser() {
 
 function ValidateEmail(mail)
 {
- if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+ if ( mail.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) )
   {
-    return (true)
+    return(true)
   }
     alert("You have entered an invalid email address!")
-    return (false)
+    return(true)
 }
 

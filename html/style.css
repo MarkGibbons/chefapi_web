@@ -11,6 +11,134 @@
   text-decoration: underline;
   width:15em;
 }
+#privateKey {
+  float:right;
+  position: relative;
+  width:25em;
+}
+.userselect {
+  float:right;
+  position: relative;
+  text-decoration: underline;
+  width:15em;
+}
+.orgList {
+  background-color: white;
+  position: relative;
+  float: left;
+  width:9em;
+  border-radius: 2px;
+  border: 2px solid white;
+}
+.user {
+  float:left;
+  text-align: center;
+  width:8em;
+}
+.organization {
+  float:left;
+  position: relative;
+  width:9em;
+}
+.nodeFilter{
+  float: left;
+  position: relative;
+  text-align: center;
+  width:8em;
+}
+.nodeListDisplay {
+  float:right;
+  position:relative;
+  width:15em;
+}
+.userListDisplay {
+  float:right;
+  position:relative;
+  width:15em;
+}
+.orgnodes {
+  float:right;
+  position:relative;
+  right-margin:5em;
+  text-decoration: none;
+  width:10em;
+}
+.nodes {
+  float:right;
+  position:relative;
+  text-decoration: none;
+  width:8em;
+}
+.orgusers {
+  float:right;
+  position:relative;
+  right-margin:5em;
+  text-decoration: none;
+  width:10em;
+}
+.users {
+  float:right;
+  position:relative;
+  text-decoration: none;
+  width:8em;
+}
+.nodeEdit {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  float:left;
+  overflow: auto;
+  position:relative;
+  resize: both;
+}
+.userEdit {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  float:left;
+  overflow: auto;
+  position:relative;
+  resize: both;
+}
+.editLabel {
+  float:left;
+  position:relative;
+  width:16em;
+}
+.editElement {
+  background-color: #F1F2F5;
+  float:left;
+  overflow: auto;
+  position:relative;
+  resize: both;
+  width:10em;
+  height: 1em;
+}
+.ok {
+  position:relative;
+  left:30PX;
+}
+.nodisplay {
+  display:none;
+}
+.leftcolumns {
+  float: left;
+}
+.rightcolumns {
+  float: right;
+}
+.clear {
+  clear:both
+}
+// buttons https://www.w3schools.com/css/css3_buttons.asp
+// back ground colors
+// Rounded corners
+// Clickable indicate by opacity
+// Centering and location
+//  probably table attributes available
+//  size is adjustable
+// white type inside darker boxes
+//  css tutorial
 .userselect {
   float:right;
   position: relative;

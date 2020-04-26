@@ -18,11 +18,9 @@ function signinFunction() {
 }
 
 function refreshFunction() {
-  // refresh a jwt
-  // TODO: convert from cookies to authorization header
-
   var request = new XMLHttpRequest();
   request.open('POST', 'https://localhost:8113/refresh', false);
+  request.setRequestHeader("Authorization", "Bearer "+ sessionStorage.getItem("jwttoken"))
   request.send();
 }
 
