@@ -27,6 +27,7 @@ function usersListFunction () {
       alert(`Error ${this.status} calling users`)
       return
     }
+    highlightList('userList')
     console.log('List' + this.response)
     var users = JSON.parse(this.response)
     console.log('List parsed' + users)
@@ -46,4 +47,11 @@ function usersListFunction () {
     document.getElementById('userListDisplay').style.display = 'inline-table'
   }
   request.send()
+}
+
+function highlightList (listname) {
+  document.getElementById('adminUserList').style.backgroundColor = 'white'
+  document.getElementById('orgUserList').style.backgroundColor = 'white'
+  document.getElementById('userList').style.backgroundColor = 'white'
+  document.getElementById(listname).style.backgroundColor = '#E8E8E8'
 }

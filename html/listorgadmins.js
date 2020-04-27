@@ -27,6 +27,7 @@ function orgadminsListFunction () {
       alert(`Error ${this.status} calling orgusers`)
       return
     }
+    highlightList('adminUserList')
     console.log('List' + this.response)
     var orgusers = JSON.parse(this.response)
     orgusers.sort(orgOrder)
