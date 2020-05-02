@@ -1,7 +1,9 @@
-## CSS Java Script Links
+## CSS & Java Script Links
 * Dropdown box - https://www.w3schools.com/howto/howto_js_dropdown.asp
 * Post with json - https://attacomsian.com/blog/xhr-json-post-request
 * Expand collapse arrow - https://alligator.io/css/collapsible/ 
+* https://www.w3schools.com/jsref/event_onload.asp run on page load
+* https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/ Res
 
 ## CORS and API Gateway
 https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSMissingAllowOrigin
