@@ -12,6 +12,7 @@ function joinOrganization () {
       return
     }
     console.log('RSP ' + this.response)
+    orgusersListFunction()
   }
 
   request.send()
