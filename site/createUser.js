@@ -6,7 +6,7 @@ function createUser () {
   request.setRequestHeader('Authorization', 'Bearer ' + sessionStorage.getItem('jwttoken'))
   request.onload = function () {
     if (this.status != 200) {
-      alert(`Error ${this.status}: $this.statusText}`)
+      alert(`Error ${this.status}: ${this.statusText}`)
       return
     }
     var userResp = JSON.parse(this.response)
