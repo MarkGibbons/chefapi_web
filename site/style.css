@@ -1,4 +1,5 @@
 #organizations {
+  color: #0000FF;
   float: left;
   position: relative;
   text-decoration: underline;
@@ -6,6 +7,7 @@
   z-index: 99;
 }
 #nodeList {
+  color: #0000FF;
   float:right;
   position: relative;
   text-decoration: underline;
@@ -17,6 +19,7 @@
   width:25em;
 }
 .userselect {
+  color: #0000FF;
   float:right;
   position: relative;
   text-decoration: underline;
@@ -29,6 +32,11 @@
   width:9em;
   border-radius: 2px;
   border: 2px solid white;
+}
+.input {
+  background-color: #F1F2F5;
+  border-radius: 2px;
+  border: 2px solid black;
 }
 .user {
   float:left;
@@ -63,6 +71,13 @@
   text-decoration: none;
   width:10em;
 }
+.clicknodes {
+  color: #0000FF;
+  float:right;
+  position:relative;
+  text-decoration: underline;
+  width:8em;
+}
 .nodes {
   float:right;
   position:relative;
@@ -82,6 +97,17 @@
   text-decoration: none;
   width:8em;
 }
+.orgEntry {
+  background-color: #F1F2F5;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  float:left;
+  overflow: auto;
+  position:relative;
+  resize: both;
+  width:8em;
+}
 .nodeEdit {
   border-style: solid;
   border-width: 2px;
@@ -91,6 +117,7 @@
   position:relative;
   resize: both;
 }
+
 .userEdit {
   border-style: solid;
   border-width: 2px;
@@ -99,6 +126,13 @@
   overflow: auto;
   position:relative;
   resize: both;
+}
+.clickLabel {
+  color: #0000FF;
+  float:left;
+  position:relative;
+  text-decoration: underline;
+  width:16em;
 }
 .editLabel {
   float:left;
@@ -130,16 +164,8 @@
 .clear {
   clear:both
 }
-// buttons https://www.w3schools.com/css/css3_buttons.asp
-// back ground colors
-// Rounded corners
-// Clickable indicate by opacity
-// Centering and location
-//  probably table attributes available
-//  size is adjustable
-// white type inside darker boxes
-//  css tutorial
 .userselect {
+  color: #0000FF;
   float:right;
   position: relative;
   text-decoration: underline;

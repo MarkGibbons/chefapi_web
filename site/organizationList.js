@@ -1,4 +1,4 @@
-function organizationListFunction () {
+function organizationListFunction() {
   // Create a request to use to call the organizations api
   var request = new XMLHttpRequest()
   request.open('GET', 'https://localhost:8143/orgs', true)

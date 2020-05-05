@@ -41,7 +41,7 @@ function nodesListFunction () {
       html += "<table class=nodes border='0|0'>"
       for (var j = 0; j < nodes.length; j++) {
         html += '<tr>'
-        html += "<td class='nodes' id=node" + nodes[j] + " onclick=nodeEdit('" + orgnodes[i].organization + "','" + nodes[j] + "')><u>" + nodes[j] + '</u></td>'
+        html += "<td class='clicknodes' id=node" + nodes[j] + " onclick=nodeEdit('" + orgnodes[i].organization + "','" + nodes[j] + "')>" + nodes[j] + '</td>'
         html += '</tr>'
       }
       html += '</tr>'

@@ -1,3 +1,3 @@
 function setjwtuser () {
-  document.getElementById('editUsername').innerHTML = sessionStorage.getItem('jwtuser').toLowerCase()
+  document.getElementById('editUsername').innerHTML = '<b>' + sessionStorage.getItem('jwtuser').toLowerCase() + '</b>'
 }
