@@ -22,10 +22,10 @@
     <h3 style="padding-left:7em;"> Selection Filters</h3>
     <div class=user>User</div>
     <div id=organizations onclick="organizationListFunction()">  Organizations</div>
-    <div class=ok id=filterToggle><button onclick="filterUsersFunction()">filter off</button></div>
+    <div class=ok id=filterToggle><button style="color: blue;" type="button" onclick="filterUsersFunction()">turn filter off</button></div>
     <br>
-    <div class="user"><input type="text" id="user"></div>
-    <div class=organization><input type="text" id="organization"></div>
+    <div class=user><input class=input type="text" id="user"></div>
+    <div class=organization><input class=input type="text" id="organization"></div>
     <div class=organization id="organizationList"></div>
     <div class=clear></div>
 
@@ -40,7 +40,7 @@
     <div class=leftcolumns>
       <h3 align="center"> Manage a User </h3>
       <div class=editLabel>User Name</div><div class=leftcolumns id=editUsername></div><br><br>
-      <div class=editLabel onclick="createUser()"><u>Create a Chef User</u></div><br><br>
+      <div class=clickLabel onclick="createUser()">Create a Chef User</div><br><br>
       <div class=nodeEdit id=editBox>
         <div class=editLabel>Email</div><div class=editElement  autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contentEditable="true" id=editEmail></div><br>
         <div class=editLabel>First Name</div><div class=editElement autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contentEditable="true" id=editFirstname></div><br>
@@ -48,10 +48,10 @@
         <div class=editLabel>Display Name</div><div class=editElement autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contentEditable="true" id=editDisplayname></div><br>
       </div><br><br>
       <p></p><br><br>
-      <div class=editLabel onclick="deleteUser()"><u>Delete a Chef User</u></div><br><br>
-      <div class=editLabel onclick="joinOrganization()"><u>Add a User to an Organization</u></div>
-      <div class=editLabel onclick="removeOrganization()"><u>Remove a User from an Organization</u></div>
-      <div class=editElement contentEditable="true" id=editOrganization></div><br><br>
+      <div class=clickLabel onclick="deleteUser()">Delete a Chef User</div><br><br>
+      <div class=clickLabel onclick="joinOrganization()">Add a User to an Organization</div><br>
+      <div class=clickLabel onclick="removeOrganization()">Remove a User from an Organization</div>
+      <div class=orgEntry contentEditable="true" id=editOrganization></div><br><br>
       <div id=privateKey>RSA Private Key</div>
     </div>
     <div class=clear><div><br>

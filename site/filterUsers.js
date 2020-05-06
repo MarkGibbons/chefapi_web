@@ -1,10 +1,10 @@
 function filterUsersFunction () {
   var flip = document.getElementById('filterToggle').textContent
   console.log(flip)
-  if (flip == 'on') {
-    flip = '<button onclick="filterUsersFunction()">filter off</button>'
+  if (flip == 'turn filter on') {
+    flip = '<button style="color: blue;" type="button" onclick="filterUsersFunction()">turn filter off</button>'
   } else {
-    flip = '<button onclick="filterUsersFunction()">on</button>'
+    flip = '<button style="color: blue;" type="button" onclick="filterUsersFunction()">turn filter on</button>'
   };
 
   document.getElementById('filterToggle').innerHTML = flip

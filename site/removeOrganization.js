@@ -1,4 +1,4 @@
-function removeOrganization() {
+function removeOrganization () {
   // Rest call to have a chef user removed from a chef organization
   var request = new XMLHttpRequest()
   org = document.getElementById('editOrganization').textContent
