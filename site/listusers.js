@@ -2,7 +2,7 @@ function usersListFunction () {
   // Create a request to use to call the users api
   var request = new XMLHttpRequest()
   var filters = {}
-  if (document.getElementById('filterToggle').textContent == 'on') {
+  if (document.getElementById('filterToggle').textContent == 'turn filter on') {
     console.log('Using the filter')
     filters.user = document.getElementById('user').value
     filters.organization = document.getElementById('organization').value
